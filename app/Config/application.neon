@@ -1,0 +1,4 @@
+application:
+	mapping:
+		*: [App, Presenters, *Module, *Presenter]
+		Error: App\Presenters\ErrorModule\*Presenter
