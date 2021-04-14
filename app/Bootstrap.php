@@ -26,15 +26,19 @@ class Bootstrap
 
         Debugger::$strictMode = E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED & ~E_USER_NOTICE;
 
-		$configurator->setTimeZone('Europe/Prague');
 		$configurator->setTempDirectory($appDir . '/temp');
 
 		$configurator->createRobotLoader()
 			->addDirectory(__DIR__)
 			->register();
 
-		$configurator->addConfig($appDir . '/config/common.neon');
-		$configurator->addConfig($appDir . '/config/local.neon');
+        $configurator->addConfig(__DIR__ . '/Config/application.neon');
+        $configurator->addConfig(__DIR__ . '/Config/parameters.neon');
+        $configurator->addConfig(__DIR__ . '/Config/extensions.neon');
+
+        $configurator->addConfig(__DIR__ . '../settings/production.neon');
+
+        $configurator->addConfig(__DIR__ . '/Config/services.neon');
 
 		return $configurator;
 	}
