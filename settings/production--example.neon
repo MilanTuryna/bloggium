@@ -1,0 +1,18 @@
+# This file is important part of web-system Bloggium and is neccesary for proper system working.
+# If you don't know how to configure it, use a user-friendly configuration editor on project website (bottom link) or contact developer (author) of Bloggium.
+# https://turyna.eu/blogium / Author: Milan Turyna milan@turyna.eu / 2020
+
+# Editable variables (replace with value and delete characters: <$, $>):
+#   mysql.host
+#   mysql.database
+#   mysql.user
+#   mysql.password
+
+php:
+    date.timezone: "Europe/Prague"
+
+database:
+    system:
+        dsn: 'mysql:host=<$mysql.host$>;dbname=<$mysql.database$>'
+        user: <$mysql.user$>
+        password: <$mysql.password$>
