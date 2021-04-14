@@ -3,9 +3,9 @@ extensions:
 
 translation:
     locales:
-        whitelist: [cs]
-        default: cs
-        fallback: [cs]
+        whitelist: [en]
+        default: en
+        fallback: [en]
     dirs:
-        - %appDir%/../settings/lang
+        - %appDir%/Config/languages
 
