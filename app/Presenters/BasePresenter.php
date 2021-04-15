@@ -46,8 +46,7 @@ abstract class BasePresenter extends Presenter
         $dir = dirname(static::getReflection()->getFileName());
         $dir = is_dir("$dir/templates") ? $dir : dirname($dir);
         return [
-            "$dir/templates/$module/$presenter/$this->view.latte",
-            "$dir/templates/$module/$presenter.$this->view.latte",
+            "$dir/$module/$this->view.latte",
         ];
     }
 
