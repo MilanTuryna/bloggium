@@ -3,6 +3,8 @@
 namespace App\Model\Configurations;
 
 use App\Model\Admin\Configuration;
+use Nette\Caching\Storage;
+use Throwable;
 
 /**
  * Class GlobalConfiguration
@@ -16,10 +18,12 @@ class GlobalConfiguration extends Configuration
 
     /**
      * GlobalConfiguration constructor.
+     * @param Storage $storage
      * @param string $file
+     * @throws Throwable
      */
-    public function __construct(string $file)
+    public function __construct(Storage $storage, string $file)
     {
-        parent::__construct($file);
+        parent::__construct($file, $storage);
     }
 }
