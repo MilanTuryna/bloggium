@@ -1,4 +1,5 @@
 application:
 	mapping:
-		*: [App, Presenters, *Module, *Presenter]
-		Error: App\Presenters\ErrorModule\*Presenter
+		Admin: App\Presenters\AdminModule\*Module\*Presenter
+		Front: App\Presenters\FrontModule\*Module\*Presenter
+		Error: App\Presenters\ErrorModule\*Module\*Presenter

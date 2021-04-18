@@ -7,6 +7,7 @@ use Nette\Application\Helpers;
 use Nette\Application\UI\Presenter;
 use Nette;
 use Contributte;
+use Symfony\Component\Finder\Glob;
 
 /**
  * Class BasePresenter
