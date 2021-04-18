@@ -36,7 +36,7 @@ class Bootstrap
         $configurator->addConfig(__DIR__ . '/Config/parameters.neon');
         $configurator->addConfig(__DIR__ . '/Config/extensions.neon');
 
-        $configurator->addConfig(__DIR__ . '../settings/production.neon');
+        $configurator->addConfig(__DIR__ . '/../settings/production.neon');
 
         $configurator->addConfig(__DIR__ . '/Config/services.neon');
 
