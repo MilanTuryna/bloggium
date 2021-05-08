@@ -8,4 +8,7 @@ translation:
         fallback: [en]
     dirs:
         - %appDir%/Config/languages
+        - %appDir%/Config/languages/adminModule
+        - %appDir%/Config/Languages/redactorModule
+        - %appDir%/Config/Languages/webModule
 
