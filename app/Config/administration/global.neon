@@ -1,6 +1,6 @@
 # This file is important part of web-system Bloggium and is neccesary for proper system working.
 # If you don't know how to configure it, use a administrator for changing this values
-# https://turyna.eu/blogium / Author: Milan Turyna milan@turyna.eu / 2020
+# https://turyna.eu/bloggium / Author: Milan Turyna milan@turyna.eu / 2020
 
 # In this configuration file are used only dot notations keys (like var.sub1.sub2.sub3) for easier processing in Configuration classes (and using constants for getting values)
 
