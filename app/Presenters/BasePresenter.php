@@ -7,7 +7,6 @@ use Nette\Application\Helpers;
 use Nette\Application\UI\Presenter;
 use Nette;
 use Contributte;
-use Symfony\Component\Finder\Glob;
 
 /**
  * Class BasePresenter
@@ -45,9 +44,8 @@ abstract class BasePresenter extends Presenter
     {
         [$module, $presenter] = Helpers::splitName($this->getName());
         $dir = dirname(static::getReflection()->getFileName());
-        $dir = is_dir("$dir/templates") ? $dir : dirname($dir);
         return [
-            "$dir/$module/$this->view.latte",
+            "$dir/$module/$presenter/latte/$this->view.latte",
         ];
     }
 
