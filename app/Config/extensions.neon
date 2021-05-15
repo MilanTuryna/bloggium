@@ -1,5 +1,6 @@
 extensions:
     translation: Contributte\Translation\DI\TranslationExtension
+    recaptcha: Contributte\ReCaptcha\DI\ReCaptchaExtension
 
 translation:
     locales:
@@ -12,3 +13,6 @@ translation:
         - %appDir%/Config/Languages/redactorModule
         - %appDir%/Config/Languages/webModule
 
+recaptcha:
+    secretKey: %dynamic.recaptcha.secretKey%
+    siteKey: %dynamic.recaptcha.siteKey%
