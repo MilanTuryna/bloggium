@@ -56,9 +56,9 @@ abstract class AbstractAuthenticator implements IAuthenticator
         if($userIdentity && $this->passwords->verify($password, $userIdentity->hashedPassword)) {
             $section->id = $userIdentity->id;
             $section->mode = $mode ?: $userIdentity->mode;
+            $this->userRepository->updateUserLastLogin($userIdentity->id);
             return;
         }
-        $this->userRepository->updateUserLastLogin($userIdentity->id);
 
         throw new BadCredentialsException;
     }
