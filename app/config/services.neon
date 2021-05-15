@@ -1,3 +1,9 @@
 services:
     admin.configurations.globalConfiguration: App\Model\Configurations\GlobalConfiguration(...,"%appDir%/config/administration/global.neon")
 
+
+    model.repository.userRepository.adminRepository: App\Model\Security\AdminRepository(..., "administrators")
+    model.repository.userrepository.redactorRepository: App\Model\Security\RedactorRepository(..., "redactors")
+
+    model.security.auth.authenticator.adminAuthenticator: App\Model\Security\Auth\Authenticator\Specific\AdminAuthenticator(..., "admin_authenticator")
+    model.security.auth.authenticator.redactorAuthenticator: App\Model\Security\Auth\Authenticator\Specific\RedactorAuthenticator(..., "redactor_authenticator")
