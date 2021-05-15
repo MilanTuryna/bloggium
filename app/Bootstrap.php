@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App;
 
-use App\Model\Configurations\ExtensionConfiguration;
+use App\Model\Modules\Admin\Configurations\ExtensionConfiguration;
 use Nette\Bootstrap\Configurator;
 use Nette\Caching\Storages\FileStorage;
 use Throwable;
