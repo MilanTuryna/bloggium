@@ -39,11 +39,8 @@ class Bootstrap
 
         $storage = new FileStorage($tempDirectory);
         $extensionConfiguration = new ExtensionConfiguration(__DIR__ . '/Config/dynamic/extensions.neon', $storage);
-        $extensionClassReflection = new \ReflectionClass($extensionConfiguration);
-        $extensionClassReflection->getConstants();
         $configurator->addServices([$extensionConfiguration->getServiceName() => $extensionConfiguration]); // registering $extensionConfiguration to DI
-        $configurator->addDynamicParameters(array_map(fn(string $id) => $extensionConfiguration->getValue($id), $extensionClassReflection->getConstants()));
-
+        $configurator->addDynamicParameters(array_map(fn(string $id) => $extensionConfiguration->getValue($id), (new \ReflectionClass($extensionConfiguration))->getConstants()));
         $configurator->addConfig(__DIR__ . '/Config/application.neon');
         $configurator->addConfig(__DIR__ . '/Config/parameters.neon');
         $configurator->addConfig(__DIR__ . '/Config/extensions.neon');
