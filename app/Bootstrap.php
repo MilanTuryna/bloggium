@@ -39,11 +39,10 @@ class Bootstrap
 
         $storage = new FileStorage($tempDirectory);
         $extensionConfiguration = new ExtensionConfiguration(__DIR__ . '/Config/dynamic/extensions.neon', $storage);
+        $extensionClassReflection = new \ReflectionClass($extensionConfiguration);
+        $extensionClassReflection->getConstants();
         $configurator->addServices([$extensionConfiguration->getServiceName() => $extensionConfiguration]); // registering $extensionConfiguration to DI
-        $configurator->addDynamicParameters([ // adding dynamic parameters for use in registered configurations
-            ExtensionConfiguration::RECAPTCHA_SITE_KEY => $extensionConfiguration->getValue(ExtensionConfiguration::RECAPTCHA_SITE_KEY),
-            ExtensionConfiguration::RECAPTCHA_SECRET_KEY => $extensionConfiguration->getValue(ExtensionConfiguration::RECAPTCHA_SECRET_KEY)
-        ]);
+        $configurator->addDynamicParameters(array_map(fn(string $id) => $extensionConfiguration->getValue($id), $extensionClassReflection->getConstants()));
 
         $configurator->addConfig(__DIR__ . '/Config/application.neon');
         $configurator->addConfig(__DIR__ . '/Config/parameters.neon');
