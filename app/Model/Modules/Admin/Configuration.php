@@ -11,6 +11,8 @@ use Throwable;
 /**
  * Class Configuration
  * @package App\Model\Admin
+ *
+ * Constants of this (and child) class are automatic representing configuration values (key => value). Example: $this->getValue(ExampleConfiguration::VALUE)
  */
 abstract class Configuration
 {
@@ -65,7 +67,7 @@ abstract class Configuration
      * @param string $id
      * @param string $value
      */
-    public function setValue(string $id, string $value) {
+    public function setValue(string $id, string $value): void {
         $this->configuration[$id] = $value;
     }
 
