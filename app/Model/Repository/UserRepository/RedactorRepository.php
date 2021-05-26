@@ -11,4 +11,10 @@ use App\Model\Repository\BaseUserRepository;
  */
 class RedactorRepository extends BaseUserRepository
 {
+    /**
+     * @param int $id
+     */
+    public function getRedactorIdentity(int $id) {
+
+    }
 }
