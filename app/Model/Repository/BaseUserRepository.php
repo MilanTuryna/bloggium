@@ -15,14 +15,16 @@ abstract class BaseUserRepository extends AbstractRepository
     /**
      * @param string $identificationName username, email or phone number
      * @param array $columns
+     * @param bool $useID
      * @return ActiveRow|null
      */
-    public function findUserByIdentificationName(string $identificationName, array $columns = ["*"]): ?ActiveRow
+    public function findUserByIdentificationName(string $identificationName, array $columns = ["*"], bool $useID = false): ?ActiveRow
     {
-        return $this->explorer->table($this->table)->select($columns)->where("username = ? OR email = ? OR phoneNumber = ?",
+        $select = $this->explorer->table($this->table)->select($columns);
+        $where = $useID ? $select->where("id = ?", $identificationName) : $select->where("username = ? OR email = ? OR phoneNumber = ?", $identificationName,
             $identificationName,
-            $identificationName,
-            $identificationName)->fetch();
+            $identificationName);
+        return $where->fetch();
     }
 
     /**
