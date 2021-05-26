@@ -14,7 +14,7 @@ use Throwable;
  *
  * Constants of this (and child) class are automatic representing configuration values (key => value). Example: $this->getValue(ExampleConfiguration::VALUE)
  */
-abstract class Configuration
+abstract class AbstractConfiguration
 {
     private string $filePath;
     private string $cacheKey;

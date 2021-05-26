@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Model\Configurations;
+namespace App\Model\Configurations\Dynamic;
 
-use App\Model\Admin\Configuration;
+use App\Model\Admin\AbstractConfiguration;
 use Nette\Caching\Storage;
 use Throwable;
 
 /**
  * Class GlobalConfiguration
- * @package App\Model\Configurations
+ * @package App\Model\Configurations\Dynamic
  */
-class GlobalConfiguration extends Configuration
+class GlobalConfiguration extends AbstractConfiguration
 {
     const APPLICATION_TRANSLATION = "application.translation";
     const APPLICATION_NAME = "application.name";

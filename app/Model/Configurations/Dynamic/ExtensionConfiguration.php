@@ -1,18 +1,18 @@
 <?php
 
 
-namespace App\Model\Modules\Admin\Configurations;
+namespace App\Model\Configurations\Dynamic;
 
 
-use App\Model\Admin\Configuration;
+use App\Model\Admin\AbstractConfiguration;
 use Nette\Caching\Storage;
 use Throwable;
 
 /**
  * Class ExtensionConfiguration
- * @package App\Model\Configurations
+ * @package App\Model\Configurations\Dynamic
  */
-class ExtensionConfiguration extends Configuration
+class ExtensionConfiguration extends AbstractConfiguration
 {
     const RECAPTCHA_SECRET_KEY = "dynamic.recaptcha.secretKey";
     const RECAPTCHA_SITE_KEY = "dynamic.recaptcha.siteKey";
