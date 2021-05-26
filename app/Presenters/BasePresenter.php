@@ -2,7 +2,7 @@
 
 namespace App\Presenters;
 
-use App\Model\Configurations\GlobalConfiguration;
+use App\Model\Configurations\Dynamic\GlobalConfiguration;
 use Nette\Application\Helpers;
 use Nette\Application\UI\Presenter;
 use Nette;
