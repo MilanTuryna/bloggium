@@ -2,6 +2,7 @@
 
 namespace App\Model\Security\Authenticator;
 
+use App\Authenticator\Exceptions\BadCredentialsException;
 use App\Authenticator\Exceptions\ClientUnloggedException;
 use App\Security\User\Credentials;
 
@@ -18,6 +19,7 @@ interface IAuthenticator
      * @param Credentials $credentials
      * @param string $mode
      * @param string $expiration
+     * @throws BadCredentialsException
      */
     public function login(Credentials $credentials, string $mode, string $expiration = self::EXPIRATION): void;
     /** @throws ClientUnloggedException */
